@@ -1,0 +1,34 @@
+
+; Base journal file for beancount-import integration
+; Generated on 2025-08-20
+
+plugin "beancount.plugins.auto_accounts"
+
+2024-08-20 open Assets:Bank:ICICI:Checking INR
+2024-08-20 open Assets:Bank:ICICI:Savings INR
+2024-08-20 open Expenses:Food:Restaurant INR
+2024-08-20 open Expenses:Food:Grocery INR
+2024-08-20 open Expenses:Transportation:Taxi INR
+2024-08-20 open Expenses:Transportation:Public INR
+2024-08-20 open Expenses:Entertainment:Movies INR
+2024-08-20 open Expenses:Entertainment:Games INR
+2024-08-20 open Expenses:Shopping:Clothing INR
+2024-08-20 open Expenses:Shopping:Electronics INR
+2024-08-20 open Expenses:Medical:Hospital INR
+2024-08-20 open Expenses:Medical:Pharmacy INR
+2024-08-20 open Expenses:Bills:Mobile INR
+2024-08-20 open Expenses:Bills:Internet INR
+2024-08-20 open Expenses:Bills:Electricity INR
+2024-08-20 open Expenses:Investment:MutualFunds INR
+2024-08-20 open Expenses:Investment:Stocks INR
+2024-08-20 open Income:Salary INR
+2024-08-20 open Income:Interest INR
+2024-08-20 open Income:Dividends INR
+2024-08-20 open Expenses:Banking:Fees INR
+2024-08-20 open Expenses:ATM:Withdrawal INR
+2024-08-20 open Expenses:Transfer:External INR
+2024-08-20 open Expenses:Uncategorized INR
+
+; Account mappings for beancount-import
+2024-08-20 open Assets:Bank:ICICI:Checking INR
+  excel_account: "Assets:Bank:ICICI:Checking"

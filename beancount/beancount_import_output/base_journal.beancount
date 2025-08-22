@@ -1,0 +1,30 @@
+
+; Base journal file for beancount-import integration
+; Generated on 2025-08-22
+
+plugin "beancount.plugins.auto_accounts"
+
+2024-08-22 open Assets:Bank:ICICI:Checking INR
+2024-08-22 open Assets:Bank:ICICI:Savings INR
+2024-08-22 open Expenses:Food:Restaurant INR
+2024-08-22 open Expenses:Food:Grocery INR
+2024-08-22 open Expenses:Transportation:Taxi INR
+2024-08-22 open Expenses:Transportation:Public INR
+2024-08-22 open Expenses:Entertainment:Movies INR
+2024-08-22 open Expenses:Entertainment:Games INR
+2024-08-22 open Expenses:Shopping:Clothing INR
+2024-08-22 open Expenses:Shopping:Electronics INR
+2024-08-22 open Expenses:Medical:Hospital INR
+2024-08-22 open Expenses:Medical:Pharmacy INR
+2024-08-22 open Expenses:Bills:Mobile INR
+2024-08-22 open Expenses:Bills:Internet INR
+2024-08-22 open Expenses:Bills:Electricity INR
+2024-08-22 open Expenses:Investment:MutualFunds INR
+2024-08-22 open Expenses:Investment:Stocks INR
+2024-08-22 open Income:Salary INR
+2024-08-22 open Income:Interest INR
+2024-08-22 open Income:Dividends INR
+2024-08-22 open Expenses:Banking:Fees INR
+2024-08-22 open Expenses:ATM:Withdrawal INR
+2024-08-22 open Expenses:Transfer:External INR
+2024-08-22 open Expenses:Uncategorized INR
