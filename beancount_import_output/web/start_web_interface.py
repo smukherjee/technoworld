@@ -29,22 +29,19 @@ if __name__ == '__main__':
     spec.loader.exec_module(config_module)
     CONFIG = config_module.CONFIG
 
-    # The webserver main function expects command line arguments.
-    # We will construct them from our config.
-    sys.argv = [
-        sys.argv[0], # script name
-        '--journal_input', CONFIG['journal'],
-        '--default_output', os.path.join(root_dir, 'pending_transactions.beancount'),
-        '--ignored_journal', os.path.join(root_dir, 'ignored_transactions.beancount'),
-        '--port', str(CONFIG.get('port', 8080)),
-        '--host', CONFIG.get('host', 'localhost'),
-    ]
-    
-    # Add data sources as a JSON string
-    data_sources_json = json.dumps(CONFIG.get('data_sources', []))
-    sys.argv.extend(['--data_sources', data_sources_json])
+    # Prepare keyword arguments and call main() programmatically to avoid
+    # command-line parsing edge cases when running from this helper script.
+    kwargs = {
+        'journal_input': CONFIG['journal'],
+        'ignored_journal': os.path.join(root_dir, 'ignored_transactions.beancount'),
+        'default_output': os.path.join(root_dir, 'pending_transactions.beancount'),
+        'transaction_output_map': os.path.join(root_dir, 'transaction_output_map.json'),
+        'port': int(CONFIG.get('port', 8080)),
+        'address': CONFIG.get('host', '127.0.0.1'),
+        'data_sources': CONFIG.get('data_sources', []),
+    }
 
-    print(f"\nOpen http://{CONFIG.get('host', 'localhost')}:{CONFIG.get('port', 8080)} in your browser")
-    
-    # Run the web server, which will parse sys.argv
-    main()
+    print(f"\nOpen http://{kwargs['address']}:{kwargs['port']} in your browser")
+    # Run the web server programmatically; the `main` function will call
+    # parse_arguments with the provided kwargs as defaults.
+    main([], **kwargs)
